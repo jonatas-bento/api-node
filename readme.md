@@ -1,63 +1,69 @@
-# API - Node - Test Backend Developer
-
-In this project I am challenging my knowledges about what must be done
-to create an API. 
-
-## Table of contents
-```bash
-$ express api-node
-```
-### Adicionar 
-
-
-
-
-## Sequence to create
-
-Here we provide the sequence to create an API - 
-
-
-```bash
+# Teste Backend Developer
+### [x] Criar o projeto
+bash
+$ npm install express-generator -g
+$ express api-usuarios
+$ cd ./api-usuarios
 $ npm install
-
+### [x] Adicionar o GIT
+bash
+$ git init
+$ git checkout -b main
+$ touch .gitignore // criar o arquivo `.gitignore`
+### [x] Adicinar um readme.md
+bash
+$ touch readme.md // criar o arquivo `readme.md`
+### [x] Adicinar e configurar nodemon
+bash
+$ npm i nodemon --save-dev
+### [x] Colocar o projeto na estrutura de mercado
+  - [x] Criar a pasta `src`;
+  - [x] Mover pasta `routes` e arquivo `app.js` para a pasta `src`;
+  - [x] Arrumar referência do `app.js` no arquivo `./bin/www`;
+#### [x] Apagar as pastas `public` e `views`;
+##### [x] Ao apagar as pastas, não esqueça de adaptar o código do arquivo `app.js`
+**Arquivo `app.js`.**
+javascript
+//...
+// view engine setup <-- APAGAR ESSA LINHA
+app.set('views', path.join(__dirname, 'views')) // <-- APAGAR ESSA LINHA
+app.set('view engine', 'jade') // <-- APAGAR ESSA LINHA
+//...
+app.use(express.static(path.join(__dirname, 'public'))) // <-- APAGAR ESSA LINHA
+//...
+// TROQUE ESSA LINHA:
+res.render('error')
+// POR ESSA:
+res.json(err)
+##### [x] E o arquivo `./src/routes/index.js`;
+Arquivo `./src/routes/index.js`.
+**TROQUE:**
+javascript
+res.render('index', { title: 'Express' });
+**PARA :**
+javascript
+res.json({ title: 'Express' });
+### [x] Definir a entidade de usuários
+json
+{
+  "id": "1",
+  "nome": "Balbina",
+  "email": "balbina@email.com",
+  "telefone": "(11) 984 347 345",
+  "senha": "123Mudar@uol",
+  "status": true
+}
+### [X] Definir endpoints da API
+  - Criar usuário     - [POST]   `/usuarios`
+  - Listar usuários   - [GET]    `/usuarios`
+  - Busca um usuários - [GET]    `/usuarios/:id`
+  - Atualizar usuário - [PUT]    `/usuarios/:id`
+  - Apagar usuário    - [DELETE] `/usuarios/:id`
 ```
-
-### The challenge
-
-You will be able to:
-
-- View the optimal layout for the site depending on their device's screen size
-- See hover states for all interactive elements on the page
-
-### Screenshot
-
-![image](./screenshot/desktopscreenshot.png)
-![image](./screenshot/mobilescreenshot.png)
-
-
-
-## My process
-
-### Built with
-
-- Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- Javascript
-
-
-### What I learned
-
-Something that was amazing in the process of building this landing page could be said of the styling bakground. Inserting gradient into the same background of an image, and customizing the location was for me a good thing to keep in my mind for next projects.
-
-
-## Author
-
-- Frontend Mentor - [@jonatasbento](https://www.frontendmentor.io/profile/yourusername)
-- Linkedin [jonatas-bento] (linkedin.com/in/jonatas-bento)
-
-
-
-## Acknowledgments
-
-I would like to say thanks to my two teachers Leandro Leite and Patrick Reis. They have been encouraging me to move forward providing almost everything I need to go ahead! Thank you guys!
+ - Criar collections no POSTMAN
+ - Criar rotas
+ - Criar Controller
+ - Criar Service
+ - Configurar Sequelize
+ - Criar Model do user
+ - Implementar Model no service
