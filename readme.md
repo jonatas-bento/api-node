@@ -60,8 +60,18 @@ json
   - Atualizar usuário - [PUT]    `/usuarios/:id`
   - Apagar usuário    - [DELETE] `/usuarios/:id`
 ```
- - Criar collections no POSTMAN
- - Criar rotas
+### [X] Criar collections no POSTMAN
+ - Done
+
+```
+ ### [X] Criar Rotas
+  - Criar a pasta `users` dentro da pasta `src`.
+  - Na pasta `users`, criar o arquivo de nome `users.routes.js`.
+
+  - No arquivo `users.routes.js`, configurar suas rotas conforme já definido acima.
+
+  - Não se esqueça de importar o arquivo `users.routes.js` 
+```
  - Criar Controller
  - Criar Service
  - Configurar Sequelize
