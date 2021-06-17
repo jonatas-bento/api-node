@@ -1,25 +1,15 @@
 const express = require('express');
+const UserController = require('./users.controller');
 const router = express.Router();
 
-router.post('/usuarios', (req, res)=>{
-    res.json({status: 'criei usuário'})
-});
+router.post('/usuarios', UserController.create);
 
-router.get('/usuarios', (req, res)=>{
-    res.json({status: 'Listei usuários'})
-});
+router.get('/usuarios', UserController.findAll);
 
-router.get('/usuarios/:id', (req, res)=>{
-    res.json({status: 'busquei um usuário'})
-});
+router.get('/usuarios/:id', UserController.findById);
 
+router.put('/usuarios/:id', UserController.update);
 
-router.put('/usuarios/:id', (req, res)=>{
-    res.json({status: 'atualizei um usuário'})
-});
-
-router.delete('/usuarios/:id', (req, res)=>{
-    res.json({status: 'deletei'})
-});
+router.delete('/usuarios/:id', UserController.remove);
 
 module.exports = router;
